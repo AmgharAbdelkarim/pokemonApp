@@ -1,4 +1,4 @@
-# E-commerce Apllication.
+# pokeApp application.
 
 ## Introduction
 thi is pokeApp Develop with ReactJs
