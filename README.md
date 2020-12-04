@@ -27,3 +27,7 @@ I integrated `Prettier` with the project as unifed formatting tool. It automatic
 npm install
 npm start
 ```
+## Improvement
+If i had more time i would develop a good UI.
+for type Filter i could add more features like if i click twice on type i well diselect the type selected.
+display in good way pokemon evolutions.
