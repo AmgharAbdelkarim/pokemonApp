@@ -8,11 +8,12 @@ const Card = ({pokemon, clickHandler}) => {
       </div>
       <div className="Card_name">{pokemon.name}</div>
       <div className="Card_types">
-        {pokemon.types.map((type) => {
+        {pokemon.types.map((type, index) => {
           return (
             <div
               aria-hidden="true"
               className="Card_type"
+              key={index}
               onClick={() => clickHandler(`/type/${type.type.name}`)}
             >
               {type.type.name}

@@ -88,7 +88,7 @@ const Home = ({history}) => {
                   onClick={() => filterByType(p.url, index)}
                   aria-hidden="true"
                   key={index}
-                  className={typeSelected.indexOf(index) >= 0 && 'selected'}
+                  className={typeSelected.indexOf(index) >= 0 ? 'selected' : ''}
                 >
                   <span>{p.name}</span>
                 </li>
