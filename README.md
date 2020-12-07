@@ -30,6 +30,6 @@ npm start
 ## Improvement
 If i had more time i could develop a good UI.
 
-For type Filter i could add more features like like when i click twice on type i will diselect the type selected.
+For type Filter i could add more features like like when i click twice on type it will diselect the type selected.
 
 Display in good way pokemon evolutions.
