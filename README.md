@@ -1,7 +1,7 @@
 # pokeApp application.
 
 ## Introduction
-thi is pokeApp Develop with ReactJs
+this is pokeApp Developed using ReactJs
 # Project Architecture
 
 The project is written with ReactJs as a View framework.
