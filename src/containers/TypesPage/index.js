@@ -15,7 +15,7 @@ const Types = ({match, history}) => {
   const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
-    const fn = async () => {
+    const fetchPokemonType = async () => {
       try {
         const {data: response} = await axios.get(
           `https://pokeapi.co/api/v2/type/${params.type}`,
@@ -27,7 +27,7 @@ const Types = ({match, history}) => {
         setLoading(false);
       }
     };
-    fn();
+    fetchPokemonType();
   }, [params]);
   const nextHandler = () => {
     setSize(size + 20);
@@ -57,13 +57,13 @@ const Types = ({match, history}) => {
           <div className="button_wrapper">
             <Button
               disabled={size > 19 ? false : true}
-              onClick={() => prevHandler()}
+              clickHandler={() => prevHandler()}
             >
               previous
             </Button>
             <Button
               disabled={size < pokemon.length - 19 ? false : true}
-              onClick={() => nextHandler()}
+              clickHandler={() => nextHandler()}
             >
               next
             </Button>

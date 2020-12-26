@@ -8,6 +8,7 @@ export const ButtonContainer = styled.div`
     border-radius: 10px;
     box-sizing: border-box;
     text-decoration: none;
+    cursor: pointer;
     font-weight: 300;
     color: #04336b;
     text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);

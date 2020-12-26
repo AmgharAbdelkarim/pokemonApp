@@ -20,7 +20,7 @@ const Home = ({history}) => {
   const [hasError, setHasError] = useState(false);
   const [typeSelected, setTypeSelected] = useState([]);
   useEffect(() => {
-    const fn = async () => {
+    const fetchPokemon = async () => {
       try {
         const {data: response} = await axios.get(currentUrl);
         const {data: responseType} = await axios.get(
@@ -41,7 +41,7 @@ const Home = ({history}) => {
         setLoading(false);
       }
     };
-    fn();
+    fetchPokemon();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentUrl]);
 

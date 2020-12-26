@@ -14,7 +14,7 @@ const ViewPokemon = ({match, history}) => {
   const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
-    const fn = async () => {
+    const fetchPokemonDetails = async () => {
       try {
         const {data: response} = await axios.get(
           `https://pokeapi.co/api/v2/pokemon/${params.name}`,
@@ -26,7 +26,7 @@ const ViewPokemon = ({match, history}) => {
         setLoading(false);
       }
     };
-    fn();
+    fetchPokemonDetails();
   }, [params.name]);
   useEffect(() => {
     const fn = async () => {
