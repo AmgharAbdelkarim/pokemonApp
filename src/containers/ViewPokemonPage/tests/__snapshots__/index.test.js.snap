@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ViewPokemon should ViewPokemon render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-gsTCUz jQNeIX"
+    id="content"
+  >
+    <div
+      class="sc-bdfBwQ kWMDsT"
+    >
+      <div
+        class="Card_img"
+      >
+        <img
+          alt=""
+          src="fake image Url"
+        />
+      </div>
+      <div
+        class="Card_name"
+      >
+        fake name
+      </div>
+      <div
+        class="Card_types"
+      >
+        <div
+          aria-hidden="true"
+          class="Card_type"
+        >
+          fakeType
+        </div>
+      </div>
+      <div
+        class="Card_info"
+      >
+        <div
+          class="Card_data Card_data-weight"
+        >
+          <p
+            class="title"
+          >
+            Weight
+          </p>
+          <p>
+            124
+          </p>
+        </div>
+        <div
+          class="Card_data Card_data-weight"
+        >
+          <p
+            class="title"
+          >
+            Height
+          </p>
+          <p>
+            12
+          </p>
+        </div>
+        <div
+          class="Card_data Card_data-ability"
+        >
+          <p
+            class="title"
+          >
+            Ability
+          </p>
+          <p>
+            water-absorb
+          </p>
+        </div>
+      </div>
+    </div>
+    <h3>
+      pokemon evolutions
+    </h3>
+    <div
+      class="sc-dlfnbm bPfrbJ"
+    >
+      <span>
+        fakeName
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;

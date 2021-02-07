@@ -1,41 +1,42 @@
-import React, {useState, useEffect} from 'react';
-import axios from 'axios';
-import Pokemon from 'components/Box';
-import Button from 'components/Button';
-import {TypeWrapper} from 'containers/TypesPage/style';
-import LoadingState from 'components/Loading';
-import Error from 'components/Error';
-import EmptyState from 'components/EmptyState';
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 
-const Types = ({match, history}) => {
-  const {params} = match;
-  const [pokemon, setPokemon] = useState([]);
-  const [size, setSize] = useState(0);
-  const [loading, setLoading] = useState(true);
-  const [hasError, setHasError] = useState(false);
+import Pokemon from "components/Box";
+import Button from "components/Button";
+import { TypeWrapper } from "containers/TypesPage/style";
+import LoadingState from "components/Loading";
+import Error from "components/Error";
+import EmptyState from "components/EmptyState";
+
+import {
+  getPokemonTypesSelector,
+  getSizeSelector,
+  getLoadingSelector,
+  getHasErrorSelector,
+} from "store/selectors";
+import { getPokemonTypes, setSize } from "store/action";
+
+const Types = ({
+  match,
+  pokemon,
+  size,
+  loading,
+  hasError,
+  getPokemonTypes,
+  setSize,
+  history,
+}) => {
+  const { params } = match;
 
   useEffect(() => {
-    const fetchPokemonType = async () => {
-      try {
-        const {data: response} = await axios.get(
-          `https://pokeapi.co/api/v2/type/${params.type}`,
-        );
-        setPokemon(response.pokemon);
-        setLoading(false);
-      } catch {
-        setHasError(true);
-        setLoading(false);
-      }
-    };
-    fetchPokemonType();
-  }, [params]);
+    getPokemonTypes(params.type);
+  }, []);
   const nextHandler = () => {
     setSize(size + 20);
-    setLoading(false);
   };
   const prevHandler = () => {
     setSize(size - 20);
-    setLoading(false);
   };
   return (
     <TypeWrapper id="content">
@@ -46,7 +47,7 @@ const Types = ({match, history}) => {
       ) : pokemon.length > 0 ? (
         <React.Fragment>
           <div className="item_wrapper">
-            {pokemon.slice(size, size + 20).map(({pokemon}, index) => (
+            {pokemon.slice(size, size + 20).map(({ pokemon }, index) => (
               <Pokemon
                 clickHandler={() => history.push(`/pokemon/${pokemon.name}`)}
                 name={pokemon.name}
@@ -76,4 +77,18 @@ const Types = ({match, history}) => {
   );
 };
 
-export default Types;
+const mapStateToProps = createStructuredSelector({
+  pokemon: getPokemonTypesSelector,
+  size: getSizeSelector,
+  loading: getLoadingSelector,
+  hasError: getHasErrorSelector,
+});
+
+const mapDispatchToProps = {
+  getPokemonTypes,
+  setSize,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Types);
+
+export { Types };

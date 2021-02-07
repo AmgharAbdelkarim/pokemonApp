@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should Footer render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdfBwQ jckeWk"
+    id="footer"
+  >
+    <span>
+      All rights reserved © 2020
+    </span>
+  </div>
+</DocumentFragment>
+`;

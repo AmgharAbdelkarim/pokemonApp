@@ -1,39 +1,37 @@
 {
   "root": true,
+  "plugins": [
+    "react"
+  ],
   "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "plugin:jsx-a11y/recommended",
-    "prettier",
-    "prettier/react",
-    "react-app"
+    "plugin:react/recommended",
+    "prettier/react"
   ],
   "env": {
     "es6": true,
     "node": true,
-    "browser": true
+    "browser": true,
+    "jest": true
   },
   "parserOptions": {
-    "ecmaVersion": 6,
+    "ecmaVersion": 2020,
     "sourceType": "module",
     "ecmaFeatures": {
-      "jsx": true,
-      "modules": true,
-      "experimentalObjectRestSpread": true
+      "jsx": true
     }
   },
-  "plugins": ["react",  "jsx-a11y", "prettier"],
   "rules": {
-    // "react/jsx-filename-extension": [
-    //   0,
-    //   {
-    //     "extensions": [".js", ".jsx"]
-    //   }
-    // ],
-    "prettier/prettier": "warn",
+    "prettier/prettier": ["error", {}, {
+      "usePrettierrc": false
+    }],
     "no-console": "warn",
     "no-eval": "warn",
-    "no-unused-vars":"warn"
+    "no-unused-vars":"warn",
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off"
   },
   "settings": {
     "react": {

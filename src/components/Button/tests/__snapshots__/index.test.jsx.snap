@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should Button Be Disabled 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdfBwQ jbmpvc"
+  >
+    <button
+      disabled=""
+    >
+      fake button label
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Button should Button be Enabled 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdfBwQ jbmpvc"
+  >
+    <button>
+      fake button label
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Button should Button render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdfBwQ jbmpvc"
+  >
+    <button
+      disabled=""
+    >
+      fake button label
+    </button>
+  </div>
+</DocumentFragment>
+`;

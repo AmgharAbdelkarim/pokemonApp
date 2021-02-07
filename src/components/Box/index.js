@@ -1,7 +1,7 @@
-import React from 'react';
-import {BoxContainer} from 'components/Box/styles';
+import React from "react";
+import { BoxContainer } from "components/Box/styles";
 
-const Box = ({name, clickHandler}) => {
+const Box = ({ name, clickHandler }) => {
   return (
     <BoxContainer onClick={clickHandler}>
       <span>{name}</span>

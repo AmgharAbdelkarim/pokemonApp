@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home should Home render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdfBwQ kbYcHs"
+    id="content"
+  >
+    <div
+      class="filter_box"
+    >
+      <h5>
+        filter Pokemon By Type
+      </h5>
+      <ul />
+    </div>
+    <div
+      class="item_container"
+    >
+      <div
+        class="item_wrapper"
+      >
+        <div
+          class="sc-gsTCUz dfCzHG"
+        >
+          <span>
+            bulbasaur
+          </span>
+        </div>
+        <div
+          class="sc-gsTCUz dfCzHG"
+        >
+          <span>
+            ivysaur
+          </span>
+        </div>
+        <div
+          class="sc-gsTCUz dfCzHG"
+        >
+          <span>
+            venusaur
+          </span>
+        </div>
+        <div
+          class="sc-gsTCUz dfCzHG"
+        >
+          <span>
+            charmander
+          </span>
+        </div>
+        <div
+          class="sc-gsTCUz dfCzHG"
+        >
+          <span>
+            charmeleon
+          </span>
+        </div>
+        <div
+          class="sc-gsTCUz dfCzHG"
+        >
+          <span>
+            charizard
+          </span>
+        </div>
+        <div
+          class="sc-gsTCUz dfCzHG"
+        >
+          <span>
+            squirtle
+          </span>
+        </div>
+        <div
+          class="sc-gsTCUz dfCzHG"
+        >
+          <span>
+            wartortle
+          </span>
+        </div>
+        <div
+          class="sc-gsTCUz dfCzHG"
+        >
+          <span>
+            blastoise
+          </span>
+        </div>
+        <div
+          class="sc-gsTCUz dfCzHG"
+        >
+          <span>
+            caterpie
+          </span>
+        </div>
+        <div
+          class="sc-gsTCUz dfCzHG"
+        >
+          <span>
+            metapod
+          </span>
+        </div>
+        <div
+          class="sc-gsTCUz dfCzHG"
+        >
+          <span>
+            butterfree
+          </span>
+        </div>
+        <div
+          class="sc-gsTCUz dfCzHG"
+        >
+          <span>
+            weedle
+          </span>
+        </div>
+        <div
+          class="sc-gsTCUz dfCzHG"
+        >
+          <span>
+            kakuna
+          </span>
+        </div>
+        <div
+          class="sc-gsTCUz dfCzHG"
+        >
+          <span>
+            beedrill
+          </span>
+        </div>
+        <div
+          class="sc-gsTCUz dfCzHG"
+        >
+          <span>
+            pidgey
+          </span>
+        </div>
+        <div
+          class="sc-gsTCUz dfCzHG"
+        >
+          <span>
+            pidgeotto
+          </span>
+        </div>
+        <div
+          class="sc-gsTCUz dfCzHG"
+        >
+          <span>
+            pidgeot
+          </span>
+        </div>
+        <div
+          class="sc-gsTCUz dfCzHG"
+        >
+          <span>
+            rattata
+          </span>
+        </div>
+        <div
+          class="sc-gsTCUz dfCzHG"
+        >
+          <span>
+            raticate
+          </span>
+        </div>
+      </div>
+      <div
+        class="button_wrapper"
+      >
+        <div
+          class="sc-dlfnbm eciQpr"
+        >
+          <button>
+            previous
+          </button>
+        </div>
+        <div
+          class="sc-dlfnbm eciQpr"
+        >
+          <button>
+            next
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

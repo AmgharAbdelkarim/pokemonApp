@@ -1,7 +1,7 @@
-import React from 'react';
-import {ButtonContainer} from 'components/Button/styles';
+import React from "react";
+import { ButtonContainer } from "components/Button/styles";
 
-const Button = ({children, clickHandler, disabled}) => {
+const Button = ({ children, clickHandler, disabled }) => {
   return (
     <ButtonContainer>
       <button disabled={disabled} onClick={clickHandler}>

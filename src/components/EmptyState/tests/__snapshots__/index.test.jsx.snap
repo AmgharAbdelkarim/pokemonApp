@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmptyState should EmptyState render correctly 1`] = `
+<DocumentFragment>
+  <h3>
+    No Data Found
+  </h3>
+</DocumentFragment>
+`;

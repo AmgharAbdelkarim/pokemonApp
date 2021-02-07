@@ -1,6 +1,7 @@
-import React from 'react';
-import {CardContainer} from 'components/Card/styles';
-const Card = ({pokemon, clickHandler}) => {
+import React from "react";
+import { CardContainer } from "components/Card/styles";
+
+const Card = ({ pokemon, clickHandler }) => {
   return (
     <CardContainer>
       <div className="Card_img">

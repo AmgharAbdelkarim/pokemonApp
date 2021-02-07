@@ -1,64 +1,72 @@
-import React, {useState, useEffect} from 'react';
-import axios from 'axios';
-import {ContentWrapper} from 'containers/HomePage/style';
-import Pokemon from 'components/Box';
-import Button from 'components/Button';
-import LoadingState from 'components/Loading';
-import Error from 'components/Error';
-import EmptyState from 'components/EmptyState';
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+import { ContentWrapper } from "containers/HomePage/style";
+import Pokemon from "components/Box";
+import Button from "components/Button";
+import LoadingState from "components/Loading";
+import Error from "components/Error";
+import EmptyState from "components/EmptyState";
 
-const Home = ({history}) => {
-  const [pokemon, setPokemon] = useState([]);
-  const [size, setSize] = useState(0);
-  const [type, setType] = useState([]);
-  const [currentUrl, setCurrentUrl] = useState(
-    'https://pokeapi.co/api/v2/pokemon',
-  );
-  const [nextUrl, setNextUrl] = useState('');
-  const [prevUrl, setPrevUrl] = useState('');
-  const [loading, setLoading] = useState(true);
-  const [hasError, setHasError] = useState(false);
-  const [typeSelected, setTypeSelected] = useState([]);
+import {
+  getPokemonSelector,
+  getSizeSelector,
+  getTypesSelector,
+  getLoadingSelector,
+  getHasErrorSelector,
+  getCurrentUrlSelector,
+  getNextUrlSelector,
+  getPrevUrlSelector,
+  getSelectSelectedTypes,
+} from "store/selectors";
+import {
+  getPokemon,
+  setTypeSelected,
+  setCurrentUrl,
+  setSize,
+  getTypes,
+  clearTypeSelected,
+} from "store/action";
+
+const Home = ({
+  pokemon,
+  size,
+  types,
+  loading,
+  hasError,
+  currentUrl,
+  nextUrl,
+  prevUrl,
+  getPokemon,
+  selectedTypes,
+  setTypeSelected,
+  setCurrentUrl,
+  setSize,
+  getTypes,
+  clearTypeSelected,
+  history,
+}) => {
   useEffect(() => {
-    const fetchPokemon = async () => {
-      try {
-        const {data: response} = await axios.get(currentUrl);
-        const {data: responseType} = await axios.get(
-          'https://pokeapi.co/api/v2/type',
-        );
-        setPokemon(
-          (response?.results !== [] && response.results) ||
-            (nextUrl || prevUrl
-              ? response.pokemon
-              : [...pokemon, ...response.pokemon]),
-        );
-        setNextUrl(response.next);
-        setPrevUrl(response.previous);
-        setType(responseType.results);
-        setLoading(false);
-      } catch {
-        setHasError(true);
-        setLoading(false);
-      }
-    };
-    fetchPokemon();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    getPokemon();
   }, [currentUrl]);
+
+  useEffect(() => {
+    getTypes();
+  }, []);
 
   const nextHandler = () => {
     if (!nextUrl) return setSize(size + 20);
     setCurrentUrl(nextUrl);
-    setLoading(true);
   };
+
   const prevHandler = () => {
     if (!nextUrl) return setSize(size - 20);
     setCurrentUrl(prevUrl);
-    setLoading(true);
   };
-  const filterByType = (currentUrl, index) => {
+
+  const filterByType = (currentUrl, name) => {
     setCurrentUrl(currentUrl);
-    setTypeSelected([...typeSelected, index]);
-    setLoading(false);
+    setTypeSelected(name);
   };
 
   return (
@@ -71,26 +79,26 @@ const Home = ({history}) => {
         <React.Fragment>
           <div className="filter_box">
             <h5>filter Pokemon By Type</h5>
-            {typeSelected.length > 0 && (
+            {selectedTypes.length > 0 && (
               <Button
                 className="clear_button"
                 clickHandler={() => {
-                  setCurrentUrl('https://pokeapi.co/api/v2/pokemon');
-                  setTypeSelected([]);
+                  setCurrentUrl("https://pokeapi.co/api/v2/pokemon");
+                  clearTypeSelected();
                 }}
               >
                 Clear
               </Button>
             )}
             <ul>
-              {type.map((p, index) => (
+              {types.map(({ name, url }) => (
                 <li
-                  onClick={() => filterByType(p.url, index)}
+                  onClick={() => filterByType(url, name)}
                   aria-hidden="true"
-                  key={index}
-                  className={typeSelected.indexOf(index) >= 0 ? 'selected' : ''}
+                  key={name}
+                  className={selectedTypes.indexOf(name) >= 0 ? "selected" : ""}
                 >
-                  <span>{p.name}</span>
+                  <span>{name}</span>
                 </li>
               ))}
             </ul>
@@ -130,4 +138,26 @@ const Home = ({history}) => {
   );
 };
 
-export default Home;
+const mapStateToProps = createStructuredSelector({
+  pokemon: getPokemonSelector,
+  size: getSizeSelector,
+  types: getTypesSelector,
+  loading: getLoadingSelector,
+  hasError: getHasErrorSelector,
+  currentUrl: getCurrentUrlSelector,
+  nextUrl: getNextUrlSelector,
+  prevUrl: getPrevUrlSelector,
+  selectedTypes: getSelectSelectedTypes,
+});
+
+const mapDispatchToProps = {
+  getPokemon,
+  setTypeSelected,
+  setCurrentUrl,
+  setSize,
+  getTypes,
+  clearTypeSelected,
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
+
+export { Home };

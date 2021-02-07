@@ -1,5 +1,5 @@
-import {HeaderWrapper} from 'components/Header/style';
-import React from 'react';
+import { HeaderWrapper } from "components/Header/style";
+import React from "react";
 const Header = () => {
   return (
     <HeaderWrapper id="header">

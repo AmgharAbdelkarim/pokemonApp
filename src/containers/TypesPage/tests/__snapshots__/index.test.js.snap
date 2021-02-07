@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Types should Types render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-dlfnbm eEFYSP"
+    id="content"
+  >
+    <div
+      class="item_wrapper"
+    >
+      <div
+        class="sc-bdfBwQ hkRHVq"
+      >
+        <span>
+          pidgey
+        </span>
+      </div>
+      <div
+        class="sc-bdfBwQ hkRHVq"
+      >
+        <span>
+          pidgeotto
+        </span>
+      </div>
+      <div
+        class="sc-bdfBwQ hkRHVq"
+      >
+        <span>
+          pidgeot
+        </span>
+      </div>
+      <div
+        class="sc-bdfBwQ hkRHVq"
+      >
+        <span>
+          rattata
+        </span>
+      </div>
+      <div
+        class="sc-bdfBwQ hkRHVq"
+      >
+        <span>
+          raticate
+        </span>
+      </div>
+      <div
+        class="sc-bdfBwQ hkRHVq"
+      >
+        <span>
+          spearow
+        </span>
+      </div>
+      <div
+        class="sc-bdfBwQ hkRHVq"
+      >
+        <span>
+          fearow
+        </span>
+      </div>
+      <div
+        class="sc-bdfBwQ hkRHVq"
+      >
+        <span>
+          jigglypuff
+        </span>
+      </div>
+      <div
+        class="sc-bdfBwQ hkRHVq"
+      >
+        <span>
+          wigglytuff
+        </span>
+      </div>
+      <div
+        class="sc-bdfBwQ hkRHVq"
+      >
+        <span>
+          meowth
+        </span>
+      </div>
+      <div
+        class="sc-bdfBwQ hkRHVq"
+      >
+        <span>
+          persian
+        </span>
+      </div>
+      <div
+        class="sc-bdfBwQ hkRHVq"
+      >
+        <span>
+          farfetchd
+        </span>
+      </div>
+    </div>
+    <div
+      class="button_wrapper"
+    >
+      <div
+        class="sc-gsTCUz cbbEGE"
+      >
+        <button
+          disabled=""
+        >
+          previous
+        </button>
+      </div>
+      <div
+        class="sc-gsTCUz cbbEGE"
+      >
+        <button
+          disabled=""
+        >
+          next
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

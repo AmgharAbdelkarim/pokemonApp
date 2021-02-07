@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const EmptyState = () => {
   return <h3>No Data Found</h3>;

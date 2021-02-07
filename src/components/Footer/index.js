@@ -1,5 +1,5 @@
-import React from 'react';
-import {FooterWrapper} from 'components/Footer/style';
+import React from "react";
+import { FooterWrapper } from "components/Footer/style";
 const Footer = () => {
   return (
     <FooterWrapper id="footer">
